@@ -49,7 +49,7 @@ button[type='button'] {
 .header-email:focus svg,
 .header-phone:hover svg,
 .header-phone:focus svg {
-  fill: var(--logo-color-blue);
+  --color1: var(--logo-color-blue);
 }
 
 .current-link:visited {
@@ -121,11 +121,11 @@ button[type='button'] {
 }
 .icon-header-email {
   margin-right: 10px;
-  fill: var(--brand-contact-color-gray);
+  --color1: var(--brand-contact-color-gray);
 }
 .icon-header-phone {
   margin-right: 10px;
-  fill: var(--brand-contact-color-gray);
+  --color1: var(--brand-contact-color-gray);
 }
 
 .section-top {
@@ -253,6 +253,7 @@ button[type='button'] {
   margin: 0px 32px 30px 32px;
   border: 0px;
 }
+
 .team-section-social-list {
   list-style: none;
   display: flex;
@@ -267,13 +268,23 @@ button[type='button'] {
   padding: 0px;
   border-radius: 50%;
 }
-
+.team-section-social-list a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .icon-team-member-social {
-  fill: var(--socials-icon-color-gray);
+  --color1: var(--socials-icon-color-gray);
 }
 
-.team-section-social-list a:hover svg {
-  /* transition: 0.2s; */
+.team-section-social-list a:hover svg,
+.team-section-social-list a:focus svg {
+  --color1: var(--brand-color-white);
+}
+.team-section-social-list a:hover {
+  /* transition: 0.1s; */
   /* cursor: pointer; */
   border-radius: 50%;
   width: 44px;
@@ -281,15 +292,11 @@ button[type='button'] {
   margin: 0px;
   padding: 0px;
   background-color: var(--logo-color-blue);
-  fill: var(--brand-color-white);
 }
-.team-section-social-list a:focus svg {
-  /* transition: 0.2s; */
-  /* cursor: pointer; */
+.team-section-social-list a:focus {
   border-radius: 50%;
   width: 44px;
   height: 44px;
-  fill: var(--brand-color-white);
   background-color: var(--logo-color-blue);
 }
 
@@ -307,7 +314,7 @@ button[type='button'] {
   padding: 16px 32px;
 }
 .section-customer-list-element svg {
-  fill: var(--customers-section-color-gray);
+  --color1: var(--customers-section-color-gray);
 }
 .section-customer-list-element:hover,
 .section-customer-list-element:focus {
@@ -316,7 +323,7 @@ button[type='button'] {
 }
 .section-customer-list-element:hover svg,
 .section-customer-list-element a:focus svg {
-  fill: var(--logo-color-blue);
+  --color1: var(--logo-color-blue);
 }
 
 .footer {
@@ -381,7 +388,6 @@ button[type='button'] {
   margin: 0px;
   padding-top: 12px;
   padding-bottom: 20px;
-
   color: var(--brand-color-white);
 }
 .footer-section-social-list {
@@ -392,18 +398,19 @@ button[type='button'] {
   padding: 0px;
   border-radius: 50%;
 }
-.footer-section-social-list li {
+.footer-section-social-list a {
+  width: 44px;
+  height: 44px;
   display: flex;
-  margin: 0px;
-  padding: 0px;
-  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon-footer-social {
-  fill: var(--brand-color-white);
+  --color1: var(--brand-color-white);
 }
-.footer-section-social-list a:hover svg,
-.footer-section-social-list a:focus svg {
+.footer-section-social-list a:hover,
+.footer-section-social-list a:focus {
   border-radius: 50%;
   width: 44px;
   height: 44px;
@@ -414,10 +421,6 @@ button[type='button'] {
   height: 44px;
   border-radius: 50%;
   background: var(--footer-icons-background-gray);
-}
-.footer-social-icon-background:hover,
-.footer-social-icon-background:focus {
-  background-color: var(--logo-color-blue);
 }
 
 /* **************************************** */
@@ -479,7 +482,6 @@ button[type='button'] {
   padding: 0px;
   margin-block: 0px;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
 }
 .portfolio-filter-division-list-element:hover,
 .portfolio-filter-division-list-element:focus {
